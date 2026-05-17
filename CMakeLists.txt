@@ -22,6 +22,9 @@ option(TIFERET_EXCEPTIONS "Enable C++ exceptions" ON)
 # ** option: build tests
 option(TIFERET_BUILD_TESTS "Build unit tests" ON)
 
+# ** option: yaml support
+option(TIFERET_YAML "Enable YAML utilities (requires yaml-cpp)" ON)
+
 # *** library
 
 # ** target: tiferet (header-only interface library)
@@ -44,6 +47,28 @@ else()
     target_compile_options(tiferet INTERFACE
         $<$<CXX_COMPILER_ID:GNU,Clang,AppleClang>:-fno-exceptions>
     )
+endif()
+
+# *** dependencies
+
+if(TIFERET_YAML)
+    include(FetchContent)
+    # yaml-cpp 0.8.0 uses cmake_minimum_required(VERSION 3.4) which CMake 4.x rejects.
+    set(CMAKE_POLICY_VERSION_MINIMUM 3.5 CACHE STRING "" FORCE)
+    FetchContent_Declare(
+        yaml-cpp
+        GIT_REPOSITORY https://github.com/jbeder/yaml-cpp.git
+        GIT_TAG 0.8.0
+    )
+    set(YAML_CPP_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+    set(YAML_CPP_BUILD_TOOLS OFF CACHE BOOL "" FORCE)
+    set(YAML_CPP_BUILD_CONTRIB OFF CACHE BOOL "" FORCE)
+    FetchContent_MakeAvailable(yaml-cpp)
+
+    target_compile_definitions(tiferet INTERFACE TIFERET_HAS_YAML=1)
+    target_link_libraries(tiferet INTERFACE yaml-cpp::yaml-cpp)
+else()
+    target_compile_definitions(tiferet INTERFACE TIFERET_HAS_YAML=0)
 endif()
 
 # *** tests

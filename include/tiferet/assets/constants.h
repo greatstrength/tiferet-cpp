@@ -40,8 +40,17 @@ constexpr const char* PARAMETER_NOT_FOUND = "PARAMETER_NOT_FOUND";
 constexpr const char* INVALID_FILE_MODE = "INVALID_FILE_MODE";
 constexpr const char* INVALID_FILE_ENCODING = "INVALID_FILE_ENCODING";
 constexpr const char* FILE_NOT_FOUND = "FILE_NOT_FOUND";
+constexpr const char* INVALID_FILE = "INVALID_FILE";
 constexpr const char* DIVISION_BY_ZERO = "DIVISION_BY_ZERO";
 constexpr const char* INVALID_INPUT = "INVALID_INPUT";
+
+// ** error: yaml
+constexpr const char* YAML_FILE_NOT_FOUND = "YAML_FILE_NOT_FOUND";
+constexpr const char* YAML_LOAD_ERROR = "YAML_LOAD_ERROR";
+constexpr const char* YAML_SAVE_ERROR = "YAML_SAVE_ERROR";
+
+// ** error: app interface
+constexpr const char* INVALID_APP_INTERFACE_TYPE = "INVALID_APP_INTERFACE_TYPE";
 
 } // namespace error_codes
 } // namespace tiferet
