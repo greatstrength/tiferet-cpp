@@ -52,6 +52,11 @@ constexpr const char* YAML_SAVE_ERROR = "YAML_SAVE_ERROR";
 // ** error: app interface
 constexpr const char* INVALID_APP_INTERFACE_TYPE = "INVALID_APP_INTERFACE_TYPE";
 
+// ** error: service registry / DI container
+constexpr const char* SERVICE_NOT_REGISTERED = "SERVICE_NOT_REGISTERED";
+constexpr const char* SERVICE_RESOLUTION_FAILED = "SERVICE_RESOLUTION_FAILED";
+constexpr const char* FEATURE_STEP_EXECUTION_FAILED = "FEATURE_STEP_EXECUTION_FAILED";
+
 } // namespace error_codes
 } // namespace tiferet
 

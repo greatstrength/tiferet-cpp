@@ -19,6 +19,9 @@ add_executable(tiferet_tests
     test_domain_di.cpp
     test_mapper_app.cpp
     test_mapper_di.cpp
+    test_registry.cpp
+    test_di_container.cpp
+    test_feature_context.cpp
 )
 
 target_link_libraries(tiferet_tests PRIVATE tiferet Catch2::Catch2WithMain)
