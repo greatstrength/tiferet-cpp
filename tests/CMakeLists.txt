@@ -22,6 +22,11 @@ add_executable(tiferet_tests
     test_registry.cpp
     test_di_container.cpp
     test_feature_context.cpp
+    test_repo_feature.cpp
+    test_repo_error.cpp
+    test_repo_di.cpp
+    test_repo_app.cpp
+    test_integration_calc.cpp
 )
 
 target_link_libraries(tiferet_tests PRIVATE tiferet Catch2::Catch2WithMain)
