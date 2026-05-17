@@ -22,6 +22,9 @@ option(TIFERET_EXCEPTIONS "Enable C++ exceptions" ON)
 # ** option: build tests
 option(TIFERET_BUILD_TESTS "Build unit tests" ON)
 
+# ** option: build examples
+option(TIFERET_BUILD_EXAMPLES "Build example applications" ON)
+
 # ** option: yaml support
 option(TIFERET_YAML "Enable YAML utilities (requires yaml-cpp)" ON)
 
@@ -85,4 +88,10 @@ if(TIFERET_BUILD_TESTS)
     FetchContent_MakeAvailable(Catch2)
 
     add_subdirectory(tests)
+endif()
+
+# *** examples
+
+if(TIFERET_BUILD_EXAMPLES)
+    add_subdirectory(examples)
 endif()

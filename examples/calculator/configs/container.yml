@@ -1,0 +1,13 @@
+attrs:
+  add_event:
+    module_path: calc.events
+    class_name: AddEvent
+  subtract_event:
+    module_path: calc.events
+    class_name: SubtractEvent
+  multiply_event:
+    module_path: calc.events
+    class_name: MultiplyEvent
+  divide_event:
+    module_path: calc.events
+    class_name: DivideEvent
